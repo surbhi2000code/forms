@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form!</title>
+</head>
+<body>
+{{thank}}
+<h1>Fill these Details to enter into site </h1>
+<div class="container my-4">
+     <form action="" method="post">
+         {% csrf_token %}
+  <div class="form-group">
+    <label for="name">First Name</label>
+    <input type="text" class="form-control" id="name" name="first_name" placeholder="Enter Your First Name">
+  </div>
+                   <div class="form-group">
+    <label for="name">Last Name</label>
+    <input type="name" class="form-control" id="mobile" name="last_name" placeholder="Enter Your Last Name">
+  </div>
+
+          <div class="form-group">
+    <label for="name">Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+  </div>
+
+              <button type="submit" href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" class="btn btn-success">Submit</button>
+         </form>
+  </div>
+
+</body>
+{% block js %}
+  <script>
+              {% if thank %}
+    alert(' Thanks for Signing Up! ');
+    document.location = "/formsapp2/index";
+              {% endif %}
+      </script>
+              {% endblock %}
+</html>
